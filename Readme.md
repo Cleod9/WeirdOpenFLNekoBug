@@ -22,7 +22,7 @@ This repo consists of a small collection of wrapper classes that are designed to
 * **MyStage.hx** -Wraps an instance of `openfl.display.Stage`
 * **MyStageWrapper.hx** - Wraps an instance of `MyStage`
 
-Each wrapper class has a getter method for retrieving the instance of the object that it is wrapping. When attempting to call `addChild()` on the `MyStageWrapper` class, Neko crashes because it seems to think that `MyStage` is an instance of `MyStageWrapper`. The problem is resolved when you remove the getter function and replace it with instance variables, or if you assign the getter function's result to a variable first.
+Each wrapper class has a getter method for retrieving the instance of the object that it is wrapping. When attempting to call `addChild()` on the `MyStageWrapper` class, Neko crashes because it seems to think that `MyStage` is an instance of `MyStageWrapper`. The problem is resolved when you replace the getter function with a direct call to the field, or if you assign the getter function's result to a local variable first.
 
 My best guess to this problem is that using a getter function call as a function argument causes Neko to lose its context temporarily. However it is unclear to me at this time if this is an issue with Neko, or an bug with the compiled Haxe code.
 
@@ -35,8 +35,8 @@ My best guess to this problem is that using a getter function call as a function
 
 This repo has been tested with the following library versions:
 
-haxe - 3.4.7
-openfl - 8.4.1
-lime - 7.0.0
-neko 2.1.0 (Also tested in 2.2.0, still bugged)
+* haxe - 3.4.7
+* openfl - 8.4.1
+* lime - 7.0.0
+* neko 2.1.0 (Also tested in 2.2.0, still bugged)
 
