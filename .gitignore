@@ -1,1 +1,6 @@
 bin/
+*.n
+*.neko
+*.js
+*.exe
+*.swf
