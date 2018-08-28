@@ -13,12 +13,13 @@ class MyStage
 		trace(Type.getClassName(Type.getClass(this))); // Somehow prints test.MyStageWrapper ?????
 		
 		// Workaround 1
-		//instance.addChild(value.sprite);
-		
-		// Workaround 2
 		//var spr = child.get_sprite();
 		//instance.addChild(spr);
 		
+		// Workaround 2
+		//instance.addChild(child.sprite);
+		
+		// Broken
 		instance.addChild(child.get_sprite());
 	}
 	public function get_instance():Dynamic

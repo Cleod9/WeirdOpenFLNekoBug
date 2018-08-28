@@ -11,12 +11,13 @@ class MyStageWrapper
 	public function addChild(value:MySpriteWrapper):Void
 	{
 		// Workaround 1
-		//stage.addChild(value.instance);
-		
-		// Workaround 2
 		//var ins = value.get_instance();
 		//stage.addChild(ins);
 		
+		// Workaround 2
+		//stage.addChild(value.instance);
+		
+		// Broken
 		stage.addChild(value.get_instance());
 	}
 	
